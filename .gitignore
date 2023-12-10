@@ -483,3 +483,6 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 VulkanBasics/Debug/VulkanBasics.log
+VulkanBasics/VulkanBasics.vcxproj
+VulkanBasics/VulkanBasics.vcxproj.filters
+VulkanBasics/VulkanBasics.vcxproj.user
