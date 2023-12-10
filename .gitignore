@@ -74,3 +74,10 @@ node_modules
 
 # Build test temp output
 /build_tests/gen*
+*.tlog
+*.pdb
+*.ilk
+*.log
+*.vcxproj
+*.filters
+*.user
