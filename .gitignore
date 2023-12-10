@@ -82,9 +82,7 @@ node_modules
 *.filters
 *.user
 *.idb
-*.pdb
-*.ilk
-*.log
-*.tlog
-*.vcxproj
-*.filters
+
+
+# Ignore Debug folder
+/Debug
