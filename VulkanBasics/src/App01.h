@@ -1,5 +1,6 @@
 #pragma once
 #include "Window.h"
+#include "Pipeline.h"
 
 namespace TVE
 {
@@ -14,6 +15,8 @@ public:
 
 private:
 	VulkanWindow window{ APP_WIDTH, APP_HEIGHT, "Vulkan App 01!" };
+	Pipeline pipeline{ "shaders/SimpleShader.vert.spv", "shaders/SimpleShader.frag.spv" }; // path relative to the exe file
+
 
 };
 

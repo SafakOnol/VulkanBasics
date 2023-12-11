@@ -137,15 +137,16 @@
   <ItemGroup>
     <ClCompile Include="src\App01.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Pipeline.cpp" />
     <ClCompile Include="src\test.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Pipeline.h" />
     <ClInclude Include="src\App01.h" />
     <ClInclude Include="src\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="shaders\compile.bat" />
     <None Include="shaders\compileShaders.bat" />
     <None Include="shaders\SimpleShader.frag" />
     <None Include="shaders\SimpleShader.frag.spv" />

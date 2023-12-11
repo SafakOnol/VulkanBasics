@@ -7,11 +7,11 @@
 
 int main()
 {
-	TVE::App01 App{};
+	TVE::App01 app{};
 
 	try
 	{
-		App.Run();
+		app.Run();
 	}
 	catch (const std::exception& e)
 	{
