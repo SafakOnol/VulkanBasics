@@ -136,12 +136,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\App01.cpp" />
+    <ClCompile Include="src\EngineDevice.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Pipeline.cpp" />
     <ClCompile Include="src\test.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\EngineDevice.h" />
     <ClInclude Include="src\Pipeline.h" />
     <ClInclude Include="src\App01.h" />
     <ClInclude Include="src\Window.h" />
