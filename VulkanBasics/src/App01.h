@@ -1,7 +1,13 @@
 #pragma once
-#include "Window.h"
+
 #include "Pipeline.h"
 #include "EngineDevice.h"
+#include "SwapChain.h"
+#include "Window.h"
+
+// std
+#include <memory>
+#include <vector>
 
 namespace TVE
 {
@@ -12,19 +18,27 @@ public:
 	static constexpr int APP_WIDTH	= 640;
 	static constexpr int APP_HEIGHT = 480;
 
+	App01();
+	~App01();
+
+	App01(const App01&) = delete;
+	App01& operator=(const App01&) = delete;
+
 	void Run();
 
 private:
+
+	void CreatePipelineLayout();
+	void CreatePipeline();
+	void CreateCommandBuffers();
+	void DrawFrame();
+
 	VulkanWindow window{ APP_WIDTH, APP_HEIGHT, "Vulkan App 01!" };
 	EngineDevice engineDevice{ window };
-	//Pipeline pipeline
-	//{
-	//	engineDevice,
-	//	"shaders/SimpleShader.vert.spv",
-	//	"shaders/SimpleShader.frag.spv",
-	//	Pipeline::DefaultPipelineConfigInfo(configInfo, APP_WIDTH, APP_HEIGHT)
-	//}; // path relative to the exe file
-
+	SwapChain swapChain{ engineDevice, window.GetExtent() };
+	std::unique_ptr<Pipeline> pipeline;
+	VkPipelineLayout pipelineLayout;
+	std::vector<VkCommandBuffer> commandBuffers;
 
 };
 

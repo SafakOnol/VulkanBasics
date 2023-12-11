@@ -148,9 +148,9 @@ void TVE::Pipeline::CreateShaderModule(const std::vector<char>& code, VkShaderMo
 	};
 }
 
-void TVE::Pipeline::DefaultPipelineConfigInfo(PipelineConfigInfo configInfo, uint32_t width, uint32_t height)
+TVE::PipelineConfigInfo TVE::Pipeline::DefaultPipelineConfigInfo(uint32_t width, uint32_t height)
 {
-	//PipelineConfigInfo configInfo{};
+	PipelineConfigInfo configInfo{};
 
 	configInfo.inputAssemblyInfo.sType					= VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
 	configInfo.inputAssemblyInfo.topology				= VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;
@@ -224,5 +224,5 @@ void TVE::Pipeline::DefaultPipelineConfigInfo(PipelineConfigInfo configInfo, uin
 	configInfo.depthStencilInfo.front					= {};  // Optional
 	configInfo.depthStencilInfo.back					= {};   // Optional
 
-	//return configInfo;
+	return configInfo;
 }

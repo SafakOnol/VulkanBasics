@@ -14,9 +14,9 @@ namespace TVE
 
 	struct PipelineConfigInfo
 	{
-		PipelineConfigInfo() = default;
+		/*PipelineConfigInfo() = default;
 		PipelineConfigInfo(const PipelineConfigInfo&) = delete;
-		PipelineConfigInfo* operator=(const PipelineConfigInfo&) = delete;
+		PipelineConfigInfo* operator=(const PipelineConfigInfo&) = delete;*/
 		// set the pipeline class info as a separate class so our app can configure it and share the configuration
 		VkViewport viewport;
 		VkRect2D scissor;
@@ -47,9 +47,9 @@ namespace TVE
 		Pipeline(const Pipeline&) = delete;
 		void operator=(const Pipeline&) = delete;
 
-		//void bind(VkCommandBuffer commandBuffer);
+		void Bind(VkCommandBuffer commandBuffer);
 
-		static void DefaultPipelineConfigInfo(PipelineConfigInfo configInfo, uint32_t width, uint32_t height);
+		static PipelineConfigInfo DefaultPipelineConfigInfo(uint32_t width, uint32_t height);
 
 	private:
 		static std::vector<char> ReadFile(const std::string& filepath);
