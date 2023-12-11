@@ -13,6 +13,11 @@ public:
 	VulkanWindow(int w, int h, std::string name);
 	~VulkanWindow();
 
+	// remove copy constructors
+	VulkanWindow(const VulkanWindow&) = delete;
+	VulkanWindow& operator=(const VulkanWindow&) = delete;
+
+
 	bool ShouldClose() { return glfwWindowShouldClose(window); }
 
 private:
