@@ -19,6 +19,7 @@ public:
 
 
 	bool ShouldClose() { return glfwWindowShouldClose(window); }
+	VkExtent2D GetExtent() { return { static_cast<uint32_t>(WINDOW_WITDH), static_cast<uint32_t>(WINDOW_HEIGHT) }; }
 
 	void CreateWindowSurface(VkInstance instance, VkSurfaceKHR* surface);
 

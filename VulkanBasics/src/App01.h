@@ -17,13 +17,13 @@ public:
 private:
 	VulkanWindow window{ APP_WIDTH, APP_HEIGHT, "Vulkan App 01!" };
 	EngineDevice engineDevice{ window };
-	Pipeline pipeline
-	{
-		engineDevice,
-		"shaders/SimpleShader.vert.spv",
-		"shaders/SimpleShader.frag.spv",
-		Pipeline::DefaultPipelineConfigInfo(configInfo, APP_WIDTH, APP_HEIGHT)
-	}; // path relative to the exe file
+	//Pipeline pipeline
+	//{
+	//	engineDevice,
+	//	"shaders/SimpleShader.vert.spv",
+	//	"shaders/SimpleShader.frag.spv",
+	//	Pipeline::DefaultPipelineConfigInfo(configInfo, APP_WIDTH, APP_HEIGHT)
+	//}; // path relative to the exe file
 
 
 };

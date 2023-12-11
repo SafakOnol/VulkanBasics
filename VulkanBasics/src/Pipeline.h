@@ -47,7 +47,7 @@ namespace TVE
 		Pipeline(const Pipeline&) = delete;
 		void operator=(const Pipeline&) = delete;
 
-		void bind(VkCommandBuffer commandBuffer);
+		//void bind(VkCommandBuffer commandBuffer);
 
 		static void DefaultPipelineConfigInfo(PipelineConfigInfo configInfo, uint32_t width, uint32_t height);
 
