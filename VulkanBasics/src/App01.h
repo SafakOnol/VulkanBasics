@@ -22,7 +22,7 @@ private:
 		engineDevice,
 		"shaders/SimpleShader.vert.spv",
 		"shaders/SimpleShader.frag.spv",
-		Pipeline::DefaultPipelineConfigInfo(APP_WIDTH, APP_HEIGHT)
+		Pipeline::DefaultPipelineConfigInfo(configInfo, APP_WIDTH, APP_HEIGHT)
 	}; // path relative to the exe file
 
 
