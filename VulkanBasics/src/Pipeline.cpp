@@ -6,10 +6,15 @@
 #include <iostream>
 
 
-TVE::Pipeline::Pipeline(const std::string& vertFilepath, const std::string& fragFilepath)
+TVE::Pipeline::Pipeline(
+	EngineDevice& device,
+	const std::string& vertFilepath,
+	const std::string& fragFilepath,
+	const PipelineConfigInfo& configInfo)
+	: engineDevice{device}
 {
 	// constructor
-	CreateGraphicsPipeline(vertFilepath, fragFilepath);
+	CreateGraphicsPipeline(vertFilepath, fragFilepath, configInfo);
 }
 
 std::vector<char> TVE::Pipeline::ReadFile(const std::string& filepath)
@@ -36,7 +41,7 @@ std::vector<char> TVE::Pipeline::ReadFile(const std::string& filepath)
 
 }
 
-void TVE::Pipeline::CreateGraphicsPipeline(const std::string& vertFilepath, const std::string& fragFilepath)
+void TVE::Pipeline::CreateGraphicsPipeline(const std::string& vertFilepath, const std::string& fragFilepath, const PipelineConfigInfo& configInfo)
 {
 	// read shaders
 	auto vertCode = ReadFile(vertFilepath);
@@ -44,4 +49,24 @@ void TVE::Pipeline::CreateGraphicsPipeline(const std::string& vertFilepath, cons
 
 	std::cout << "Vertex Shader Code Size: "	<< vertCode.size() << " bytes." << std::endl;
 	std::cout << "Fragment Shader Code Size: "	<< fragCode.size() << " bytes." << std::endl;
+}
+
+void TVE::Pipeline::CreateShaderModule(const std::vector<char>& code, VkShaderModule* shaderModule)
+{
+	VkShaderModuleCreateInfo createInfo{};
+	createInfo.sType	= VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO;
+	createInfo.codeSize = code.size();
+	createInfo.pCode	= reinterpret_cast<const uint32_t*>(code.data());
+
+	if (vkCreateShaderModule(engineDevice.Device(), &createInfo, nullptr, shaderModule) != VK_SUCCESS)
+	{
+		throw std::runtime_error("failed to create Shader Module!");
+	};
+}
+
+TVE::PipelineConfigInfo TVE::Pipeline::DefaultPipelineConfigInfo(uint32_t width, uint32_t height)
+{
+	PipelineConfigInfo configInfo{};
+
+	return configInfo;
 }

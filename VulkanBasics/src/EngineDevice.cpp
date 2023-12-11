@@ -54,12 +54,12 @@ namespace TVE
     // class member functions
     EngineDevice::EngineDevice(VulkanWindow& window) : window{ window } 
     {
-        CreateInstance();
-        SetupDebugMessenger();
-        CreateSurface();
-        PickPhysicalDevice();
-        CreateLogicalDevice();
-        CreateCommandPool();
+        CreateInstance();           // Initialize Vulkan Library and the connection between the application and Vulkan
+        SetupDebugMessenger();      // Setup validation layers
+        CreateSurface();            // Create Surface (GLFW)
+        PickPhysicalDevice();       // Pick the gpu to use with our app
+        CreateLogicalDevice();      // What features of gpu we want to use
+        CreateCommandPool();        // Create command pool for command buffers allocations
     }
 
     EngineDevice::~EngineDevice()
